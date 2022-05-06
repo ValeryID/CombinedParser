@@ -13,9 +13,7 @@ try {
 
 function start($argv)
 {
-    if (count($argv) < 2) {
-        stop('Too few arguments');
-    }
+    if (count($argv) < 2) stop('Too few arguments');
 
     $logFile = getLogFile($argv);
 
@@ -31,15 +29,18 @@ function start($argv)
  */
 function getPlatforms($users)
 {
+    $platforms = [];
+    $knownPlatforms = Processors\PlatformsProcessor::knownPlatforms();
+    foreach($knownPlatforms as $platform) {
+        $platforms[$platform] = 0;
+    }
+
     return array_reduce($users, function($platforms, Stats\User $u) {
         $platform = $u->platform();
-        if (!isset($platforms[$platform]))
-            $platforms[$platform] = 0;
-
-        $platforms[$platform]++;
+        $platforms[$platform] += $u->viewsCount();
 
         return $platforms;
-    }, []);
+    }, $platforms);
 }
 
 function getLogFile($argv): SplFileObject
@@ -64,13 +65,14 @@ function parseLogFile(SplFileObject $logFile): Stats\StatsContainer
 
 function printInfo(Stats\StatsContainer $stats, array $platforms)
 {
+    $isCrawler = fn($p) => in_array($p, array_keys(Processors\PlatformsProcessor::CRAWLERS));
     echo json_encode([
         'views' => array_reduce($stats->users, fn ($acc, Stats\User $u) => $acc + $u->viewsCount()),
         'urls' => count($stats->requests),
         'traffic' => $stats->traffic,
-        'crawlers' => array_filter($platforms, fn ($p) => substr($p, 0, 7) === 'Crawler', ARRAY_FILTER_USE_KEY),
+        'crawlers' => array_filter($platforms, $isCrawler, ARRAY_FILTER_USE_KEY),
         'statusCodes' => $stats->statusCodes,
-        'platforms' => array_filter($platforms, fn ($p) => substr($p, 0, 7) !== 'Crawler', ARRAY_FILTER_USE_KEY),
+        'platforms' => array_filter($platforms, fn($p) => !$isCrawler($p), ARRAY_FILTER_USE_KEY),
     ], JSON_PRETTY_PRINT);
 }
 

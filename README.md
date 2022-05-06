@@ -1,16 +1,18 @@
-## Usage example
- #### > parser data/access.log  
-  
+## Usage example  
+ #### > parser data/access.log    
+    
 {  
-&nbsp;&nbsp;&nbsp;&nbsp;"views": 14158,  
-&nbsp;&nbsp;&nbsp;&nbsp;"urls": 2624,  
+&nbsp;&nbsp;&nbsp;&nbsp;"views": 46178,  
+&nbsp;&nbsp;&nbsp;&nbsp;"urls": 3549,  
 &nbsp;&nbsp;&nbsp;&nbsp;"traffic": 2382140114,  
 &nbsp;&nbsp;&nbsp;&nbsp;"crawlers": {  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Crawler, Bing": 15,  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Crawler, Google": 22,  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Crawler, Majestic": 12,  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Crawler, Baidu": 11,  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Crawler, Yandex": 2  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Google": 114,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Bing": 110,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Baidu": 152,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Majestic": 40,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Yahoo": 0,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"MegaIndex": 0,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Yandex": 6  
 &nbsp;&nbsp;&nbsp;&nbsp;},  
 &nbsp;&nbsp;&nbsp;&nbsp;"statusCodes": {  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"200": 40404,  
@@ -23,11 +25,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"304": 87  
 &nbsp;&nbsp;&nbsp;&nbsp;},  
 &nbsp;&nbsp;&nbsp;&nbsp;"platforms": {  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Windows": 511,  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Undefined": 9669,  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Android": 91,  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Mac": 416,  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Linux": 74,  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"iPhone": 22  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Windows": 17196,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Mac": 827,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Linux": 1538,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Android": 436,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"iPhone": 426,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"iPad": 0,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"iPod": 0,  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Undefined": 25333  
 &nbsp;&nbsp;&nbsp;&nbsp;}  
 }

@@ -92,7 +92,7 @@ class CombinedStatsProcessor
 
     private function processRequest(string $request)
     {
-        $request = preg_split('/(\?)|( HTTP)/', $request)[0];
+        $request = preg_split('/ HTTP/', $request)[0];
 
         if (!isset($this->stats->requests[$request]))
             $this->stats->requests[$request] = 0;

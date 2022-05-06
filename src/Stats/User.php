@@ -16,18 +16,18 @@ class User
 
     public function __construct(string $agent, string $datetimeFormat)
     {
-        $this->viewThreshold = new DateInterval('PT5S');
+        $this->viewThreshold = new DateInterval('PT0S');
         $this->_agent = $agent;
         $this->view($datetimeFormat);
     }
 
     public function view(string $datetimeFormat)
     {
-        $viewDateTime = new DateTime($datetimeFormat);
-        if (!isset($this->lastView) || $viewDateTime > $this->lastView->add($this->viewThreshold)) {
-            $this->lastView = $viewDateTime;
+        // $viewDateTime = new DateTime($datetimeFormat);
+        // if (!isset($this->lastView) || $viewDateTime > $this->lastView->add($this->viewThreshold)) {
+        //     $this->lastView = $viewDateTime;
             $this->_viewsCount++;
-        }
+        // }
     }
 
     public function viewsCount()
