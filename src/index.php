@@ -19,15 +19,12 @@ function start($argv)
     
     $dataFile = new SplFileObject($dataFilePath);
     
-    // while(!$dataFile->eof()) var_dump(trim($dataFile->fgets()));
     $stats = new StatsContainer();
     $processor = new Procesors\CombinedStatsProcessor($stats);
     while(!$dataFile->eof()) { 
         $entry = trim($dataFile->fgets());
         if(strlen($entry) > 0) $processor->process($entry);
     }
-    // $processor->process(trim($dataFile->fgets()));
-    // var_dump();
 
     var_dump($stats);
 }

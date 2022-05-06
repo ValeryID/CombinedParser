@@ -3,7 +3,7 @@
 namespace App\Stats;
 
 /**
- * @property    uniqueUser[]   $uniqueUsers
+ * @property    User[]          $uniqueUsers
  * @property    int[]           $requests
  * @property    int[]           $crawlers
  * @property    int[]           $referers
