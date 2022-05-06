@@ -78,6 +78,6 @@ function printInfo(Stats\StatsContainer $stats, array $platforms)
 
 function stop($message)
 {
-    fwrite(STDERR, $message);
+    fwrite(STDERR, "$message\n");
     die();
 }
