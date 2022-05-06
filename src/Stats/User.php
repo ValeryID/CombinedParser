@@ -2,13 +2,14 @@
 
 namespace App\Stats;
 
+use App\Processors;
 use DateInterval;
 use DateTime;
 
 class User
 {
     private string $_agent;
-    private int $viewsCount = 0;
+    private int $_viewsCount = 0;
     private DateTime $lastView;
 
     private DateInterval $viewThreshold;
@@ -23,15 +24,24 @@ class User
     public function view(string $datetimeFormat)
     {
         $viewDateTime = new DateTime($datetimeFormat);
-        if(!isset($this->lastView) || $viewDateTime > $this->lastView->add($this->viewThreshold))
-        {
+        if (!isset($this->lastView) || $viewDateTime > $this->lastView->add($this->viewThreshold)) {
             $this->lastView = $viewDateTime;
-            $this->viewsCount++;
+            $this->_viewsCount++;
         }
+    }
+
+    public function viewsCount()
+    {
+        return $this->_viewsCount;
     }
 
     public function agent(): string
     {
         return $this->_agent;
+    }
+
+    public function platform(): string
+    {
+        return Processors\PlatformsProcessor::parseAgent($this->agent());
     }
 }

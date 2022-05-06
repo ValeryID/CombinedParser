@@ -3,7 +3,7 @@
 namespace App\Stats;
 
 /**
- * @property    User[]          $uniqueUsers
+ * @property    User[]          $users
  * @property    int[]           $requests
  * @property    int[]           $crawlers
  * @property    int[]           $referers
@@ -11,7 +11,7 @@ namespace App\Stats;
  */
 class StatsContainer
 {
-    public array $uniqueUsers = [];
+    public array $users = [];
     public array $requests = [];
     public array $referers = [];
     public int $traffic = 0;
