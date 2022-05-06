@@ -1,0 +1,16 @@
+{
+    "name": "usr/app",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tommy",
+            "email": "tommyban@rambler.ru"
+        }
+    ],
+    "require": {}
+}
