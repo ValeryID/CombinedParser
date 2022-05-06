@@ -17,6 +17,8 @@ function start($argv)
 
     $logFile = getLogFile($argv);
 
+    if(is_null($logFile)) stop('Cannot open file');
+
     $stats = parseLogFile($logFile);
 
     $platforms = getPlatforms($stats->users);
@@ -43,10 +45,12 @@ function getPlatforms($users)
     }, $platforms);
 }
 
-function getLogFile($argv): SplFileObject
+function getLogFile($argv): ?SplFileObject
 {
     $logFilePath = getcwd() . "/{$argv[1]}";
-    return new SplFileObject($logFilePath);
+    $fileInfo = new SplFileInfo($logFilePath);
+
+    return $fileInfo->isReadable() ? new SplFileObject($logFilePath) : null;
 }
 
 function parseLogFile(SplFileObject $logFile): Stats\StatsContainer
