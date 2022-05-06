@@ -94,17 +94,19 @@ class CombinedStatsProcessor
     {
         $request = preg_split('/ HTTP/', $request)[0];
 
-        if (!isset($this->stats->requests[$request]))
+        if (!isset($this->stats->requests[$request])) {
             $this->stats->requests[$request] = 0;
+        }
 
         $this->stats->requests[$request]++;
     }
 
     private function processStatus(string $status)
     {
-        if (!isset($this->stats->statusCodes[$status]))
+        if (!isset($this->stats->statusCodes[$status])) {
             $this->stats->statusCodes[$status] = 0;
-            
+        }
+
         $this->stats->statusCodes[$status]++;
     }
 
@@ -115,9 +117,10 @@ class CombinedStatsProcessor
 
     private function processReferer(string $referer)
     {
-        if (!isset($this->stats->referers[$referer]))
+        if (!isset($this->stats->referers[$referer])) {
             $this->stats->referers[$referer] = 0;
-            
+        }
+
         $this->stats->referers[$referer]++;
     }
 }

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-php src/index.php $@
+php src/Parser.php $@
