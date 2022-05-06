@@ -71,7 +71,7 @@ function printInfo(Stats\StatsContainer $stats, array $platforms)
         'crawlers' => array_filter($platforms, fn ($p) => substr($p, 0, 7) === 'Crawler', ARRAY_FILTER_USE_KEY),
         'statusCodes' => $stats->statusCodes,
         'platforms' => array_filter($platforms, fn ($p) => substr($p, 0, 7) !== 'Crawler', ARRAY_FILTER_USE_KEY),
-    ]);
+    ], JSON_PRETTY_PRINT);
 }
 
 function stop($message)
