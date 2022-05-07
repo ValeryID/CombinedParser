@@ -5,17 +5,6 @@ namespace App;
 use App\Processors;
 use App\Stats;
 
-require __DIR__ . '/../vendor/autoload.php';
-
-try {
-    $app = new Parser($argv);
-    $json = $app->parse();
-    echo "$json\n";
-} catch (\RuntimeException $e) {
-    fwrite(STDERR, "Error: {$e->getMessage()}\n");
-    exit();
-}
-
 /**
  * @property    string[]    $argv
  */

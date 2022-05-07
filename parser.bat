@@ -1,1 +1,1 @@
-@php src/Parser.php %*
+@php src/index.php %*
